@@ -4,7 +4,7 @@ import Product from "./Product";
 const Inventory = () => {
   const [cycles, setCycle] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/user")
+    fetch("https://intense-stream-06695.herokuapp.com/user")
       .then((response) => response.json())
       .then((data) => setCycle(data));
   }, []);
