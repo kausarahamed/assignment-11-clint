@@ -21,36 +21,34 @@ const Register = () => {
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-  const handleName = (e) => {
+  const getName = (e) => {
     setName(e.target.value);
   };
-  const handleEmail = (e) => {
+  const getEmail = (e) => {
     setEmail(e.target.value);
   };
-  const handlePassword = (e) => {
+  const getPassword = (e) => {
     setPassword(e.target.value);
   };
-  const handleConfirmPassword = (e) => {
+  const getConfirmPassword = (e) => {
     setConfirmPassword(e.target.value);
   };
 
-  const handleSubmit = async (e) => {
+  const createUserWithEmail = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      console.log(" password mich match");
       return;
     }
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
   };
   if (user || userOne) {
-    console.log("login success", { id: "login" });
     navigate("/");
   }
 
   return (
     <div className="login w-11/12  md:w-1/3 mx-auto border-2 my-5 p-10 rounded-xl font-serif">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={createUserWithEmail}>
         <h1 className="text-2xl font-bold text-center text-blue-500">
           Please Register...
         </h1>
@@ -59,7 +57,7 @@ const Register = () => {
             Name
           </label>
           <input
-            onBlur={handleName}
+            onBlur={getName}
             className=" btn text-xl border w-full p-2"
             type="text"
             name="name"
@@ -71,7 +69,7 @@ const Register = () => {
             Email
           </label>
           <input
-            onBlur={handleEmail}
+            onBlur={getEmail}
             className="btn text-xl border w-full p-2"
             type="email"
             name="email"
@@ -83,7 +81,7 @@ const Register = () => {
             Password
           </label>
           <input
-            onBlur={handlePassword}
+            onBlur={getPassword}
             className="border w-full btn text-xl p-2"
             type="password"
             name="password"
@@ -95,7 +93,7 @@ const Register = () => {
             Confirm Password
           </label>
           <input
-            onBlur={handleConfirmPassword}
+            onBlur={getConfirmPassword}
             className="border w-full btn text-2xl p-2"
             type="password"
             name="confirm password"

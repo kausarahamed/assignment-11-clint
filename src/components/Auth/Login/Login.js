@@ -23,19 +23,19 @@ const Login = () => {
   const [sendPasswordResetEmail, sending, ResetPassError] =
     useSendPasswordResetEmail(auth);
 
-  const handleEmail = (e) => {
+  const getEmail = (e) => {
     setEmail(e.target.value);
   };
-  const handlePassword = (e) => {
+  const getPassword = (e) => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = async (e) => {
+  const signInEmail = async (e) => {
     e.preventDefault();
     await signInWithEmailAndPassword(email, password);
   };
 
-  const handleResetPassword = () => {
+  const setNewPassword = () => {
     sendPasswordResetEmail(email);
     toast("Email Send");
   };
@@ -46,7 +46,7 @@ const Login = () => {
 
   return (
     <div className=" w-11/12 md:w-1/3 mx-auto border-2 my-5 p-10 rounded-xl font-serif">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={signInEmail}>
         <h1 className="text-2xl font-bold text-center text-blue-500">
           Please Login...
         </h1>
@@ -55,7 +55,7 @@ const Login = () => {
             Email
           </label>
           <input
-            onBlur={handleEmail}
+            onBlur={getEmail}
             className="btn text-xl p-2 border w-full"
             type="email"
             name="email"
@@ -67,7 +67,7 @@ const Login = () => {
             Password
           </label>
           <input
-            onBlur={handlePassword}
+            onBlur={getPassword}
             className="btn text-2xl border w-full p-2"
             type="password"
             name="password"
@@ -104,7 +104,7 @@ const Login = () => {
       <p className="text-xl text-center mt-3">
         forget password?
         <span
-          onClick={handleResetPassword}
+          onClick={setNewPassword}
           className="text-blue-500 hover:text-orange-600 ml-3 cursor-pointer"
         >
           reset password
