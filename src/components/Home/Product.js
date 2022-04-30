@@ -4,7 +4,10 @@ const Product = ({ product }) => {
   const { name, price, image, description, quantity, supplier } = product;
   return (
     <div>
-      <div className="mx-5 mb-10 bg-gray-200 rounded-xl h-[550px] relative shadow-2xl">
+      <div
+        className="mx-5 mb-10 bg-gray-200 rounded-xl h-[8
+        50px] relative shadow-2xl"
+      >
         <img
           className="rounded-t-xl w-full mt-3 h-[200px]"
           src={image}

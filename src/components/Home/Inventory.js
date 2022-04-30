@@ -10,12 +10,14 @@ const Inventory = () => {
   }, []);
   return (
     <div>
-      <h1 className="text-center text-5xl mt-3 text-blue-400 font-serif grid grid-cols-3">
+      <h1 className="text-center text-5xl mt-3 text-blue-400 font-serif">
         Inventory
       </h1>
-      {cycles.map((cycle) => (
-        <Product key={cycle._id} product={cycle} />
-      ))}
+      <div className="pt-10 grid md:grid-cols-3 gap-5 py10">
+        {cycles.map((cycle) => (
+          <Product key={cycle._id} product={cycle} />
+        ))}
+      </div>
     </div>
   );
 };
