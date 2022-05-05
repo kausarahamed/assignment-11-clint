@@ -18,6 +18,27 @@ const Header = () => {
           Home
         </Link>
 
+        <Link className="mr-4" to="/servics">
+          Services
+        </Link>
+        <Link className="mr-4" to="/blogs">
+          Blogs
+        </Link>
+        {user?.uid && (
+          <>
+            {" "}
+            <Link className="mr-4" to="/inventoris">
+              Inventories
+            </Link>
+            <Link className="mr-4" to="/additem">
+              Add Item
+            </Link>
+            <Link className="mr-4" to="/myitem">
+              My Item
+            </Link>
+          </>
+        )}
+
         {user ? (
           <button onClick={() => signOut(auth)}>Log out</button>
         ) : (
