@@ -1,13 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Product = ({ product }) => {
-  const { name, price, image, description, quantity, supplier } = product;
+  const navigate = useNavigate();
+  const { _id, name, price, image, description, quantity, supplier } = product;
   return (
     <div>
-      <div
-        className="mx-5 mb-10 bg-gray-200 rounded-xl h-[8
-        50px] relative shadow-xl h-[600px]"
-      >
+      <div className="mx-5 mb-10 bg-gray-200 rounded-xl  relative shadow-xl h-[700px]">
         <img
           className="rounded-t-xl w-full mt-3 h-[200px]"
           src={image}
@@ -20,7 +19,7 @@ const Product = ({ product }) => {
           {description.slice(0, 150)}{" "}
           <span className="text-orange-400">Read More...</span>
         </div>
-        <div className="absolute bottom-0">
+        <div className="absolute bottom-0 ">
           <div className="text-xl font-sans px-5 ">
             <span className="text-2xl">Price: $</span>
             {price}
@@ -32,6 +31,14 @@ const Product = ({ product }) => {
           <div className="text-xl font-sans px-5 ">
             <span className="text-2xl">Supplier: </span>
             {supplier}
+          </div>
+          <div className=" mt-5 flex justify-end">
+            <button
+              onClick={() => navigate(`update/${_id}`)}
+              className=" bg-yellow-600 p-2  rounded-xl "
+            >
+              Upadte Item
+            </button>
           </div>
         </div>
       </div>

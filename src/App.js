@@ -11,6 +11,7 @@ import MyItem from "./components/Lock/MyItem";
 import RequierAuth from "./components/Lock/RequierAuth";
 import Services from "./components/Lock/Services";
 import Notfound from "./components/notfound/Notfound";
+import Update from "./components/update/Update";
 
 function App() {
   return (
@@ -43,6 +44,14 @@ function App() {
           element={
             <RequierAuth>
               <MyItem></MyItem>
+            </RequierAuth>
+          }
+        ></Route>
+        <Route
+          path="/update/:id"
+          element={
+            <RequierAuth>
+              <Update></Update>
             </RequierAuth>
           }
         ></Route>
