@@ -6,7 +6,7 @@ const ManageCycle = ({ product }) => {
   const navigate = useNavigate();
   const { _id, name, price, image, description, quantity, supplier } = product;
   const deleteHandeler = (id) => {
-    fetch(`http://localhost:5000/user/${id}`, {
+    fetch(`https://intense-stream-06695.herokuapp.com/user/${id}`, {
       method: "delete",
     })
       .then((response) => response.json())
