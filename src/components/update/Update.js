@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Update = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [product, setproduct] = useState({});
   useEffect(() => {
@@ -18,7 +19,7 @@ const Update = () => {
         <div className=" md:w-1/2">
           <img src={image} alt="" />
         </div>
-        <div className="md:w-1/2 mt-16">
+        <div className="md:w-1/2 mt-16 mb-2">
           <h1 className="text-4xl font-serif italic text-center text-blue-500 font-bold pt-1">
             {name}
           </h1>
@@ -41,7 +42,7 @@ const Update = () => {
         </div>
       </div>
       <div className="flex justify-evenly mb-10">
-        <button className="cursor-pointer border-2 bg-orange-400 p-2 rounded-lg">
+        <button className=" border-2 bg-orange-400 p-2   rounded-lg text-white ">
           Deliver
         </button>
         <form>
@@ -52,11 +53,19 @@ const Update = () => {
             placeholder="Add Quantity"
           />
           <input
-            className="cursor-pointer border-2 bg-orange-400 p-2 rounded-lg "
+            className="cursor-pointer border-2 bg-orange-400 p-2  rounded-lg text-white  "
             type="submit"
             value="Add Quantity"
           />
         </form>
+      </div>
+      <div className="flex justify-center mb-5">
+        <button
+          onClick={() => navigate("/inventoris")}
+          className="border-2 bg-orange-400 py-2 px-5 text-2xl rounded-lg text-white font-bold"
+        >
+          Manage Inventory
+        </button>
       </div>
     </div>
   );
