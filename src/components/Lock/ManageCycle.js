@@ -10,7 +10,12 @@ const ManageCycle = ({ product }) => {
       method: "delete",
     })
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          navigate("/");
+          alert("Delete success");
+        }
+      });
   };
   return (
     <div>
