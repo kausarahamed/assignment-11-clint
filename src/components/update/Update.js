@@ -10,7 +10,7 @@ const Update = () => {
     fetch(`https://intense-stream-06695.herokuapp.com/user/${id}`)
       .then((response) => response.json())
       .then((data) => setproduct(data));
-  }, [id]);
+  }, [id, product]);
   const { name, email, image, description, supplier, quantity, price } =
     product;
 
