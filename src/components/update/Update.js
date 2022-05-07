@@ -33,7 +33,8 @@ const Update = () => {
     e.preventDefault();
     const addQuantity = e.target.quantity.value;
     const newQuantity = quantity + +addQuantity;
-    fetch(`http://localhost:5000/user/${id}`, {
+    console.log(addQuantity);
+    fetch(`https://intense-stream-06695.herokuapp.com/user/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ newQuantity }),
@@ -82,7 +83,7 @@ const Update = () => {
         >
           Deliver
         </button>
-        <form onClick={handleForm}>
+        <form onSubmit={handleForm}>
           <input
             className="p-2"
             type="number"
