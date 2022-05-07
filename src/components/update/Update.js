@@ -29,6 +29,24 @@ const Update = () => {
       });
   };
 
+  const handleForm = (e) => {
+    e.preventDefault();
+    const addQuantity = e.target.quantity.value;
+    const newQuantity = quantity + +addQuantity;
+    fetch(`http://localhost:5000/user/${id}`, {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ newQuantity }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          toast.success("Quantity Added Successfully", { id: "toastId" });
+          e.target.reset();
+        }
+      });
+  };
+
   return (
     <div>
       <div className="md:flex  ">
@@ -64,7 +82,7 @@ const Update = () => {
         >
           Deliver
         </button>
-        <form>
+        <form onClick={handleForm}>
           <input
             className="p-2"
             type="number"

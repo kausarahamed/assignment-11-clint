@@ -10,7 +10,7 @@ import Blogs from "./components/Lock/Blogs";
 import Inventoris from "./components/Lock/Inventoris";
 import MyItem from "./components/Lock/MyItem";
 import RequierAuth from "./components/Lock/RequierAuth";
-import Services from "./components/Lock/Services";
+import CycleTires from "./components/Lock/Services";
 import Notfound from "./components/notfound/Notfound";
 import Update from "./components/update/Update";
 
@@ -31,7 +31,7 @@ function App() {
             </RequierAuth>
           }
         ></Route>
-        <Route path="/servics" element={<Services></Services>}></Route>
+        <Route path="/cycletires" element={<CycleTires></CycleTires>}></Route>
         <Route
           path="/additem"
           element={

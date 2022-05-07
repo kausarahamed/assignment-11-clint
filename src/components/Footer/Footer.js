@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../img/logo1.jpg";
+import logo from "../../img/bw-logo_250x.webp";
 import "./footer.css";
 import { BiEnvelope } from "react-icons/bi";
 import { BsArrowRight } from "react-icons/bs";
