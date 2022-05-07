@@ -16,7 +16,7 @@ const Update = () => {
 
   const handleDelivered = () => {
     const newQuantity = quantity - 1;
-    fetch(`http://localhost:5000/user/${id}`, {
+    fetch(`https://intense-stream-06695.herokuapp.com/user/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ newQuantity }),
