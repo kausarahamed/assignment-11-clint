@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import ClockLoader from "react-spinners/ClockLoader";
+
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
@@ -75,7 +77,11 @@ const Login = () => {
           />
         </div>
 
-        {(loading || sending) && <p>Loading</p>}
+        {(loading || sending) && (
+          <p>
+            <ClockLoader></ClockLoader>
+          </p>
+        )}
 
         {(error || ResetPassError) && (
           <p className="text-red-600">
