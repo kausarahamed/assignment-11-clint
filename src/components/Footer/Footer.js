@@ -58,7 +58,7 @@ const Footer = () => {
               Newsletter
             </h3>
             <form>
-              <div className="flex">
+              <div className="flex mt-5">
                 <div className="text-2xl mt-2 mr-2">
                   <BiEnvelope></BiEnvelope>
                 </div>
@@ -73,7 +73,7 @@ const Footer = () => {
                 </button>
               </div>
             </form>
-            <div className="social-icon flex gap-3 cursor-pointer text-2xl ">
+            <div className="social-icon flex gap-3 cursor-pointer text-2xl my-5 ">
               <BsFacebook></BsFacebook>
               <BsInstagram></BsInstagram>
               <BsWhatsapp></BsWhatsapp>

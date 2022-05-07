@@ -50,28 +50,6 @@ ul li{
     
 }
 
-form{
-    padding-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 50px;
-}
-form input{
-    width: 100%;
-    background: transparent;
-    color: #ccc;
-    border: 0;
-    outline: none;
-
-}
-form button{
-    background: transparent;
-    cursor: pointer;
-    border: 0;
-    outline: none;
-}
 .hr{
     width: 90%;
     border: 0;
