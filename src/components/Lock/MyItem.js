@@ -34,23 +34,26 @@ const MyItem = () => {
       <p className="text-4xl font-serif italic text-center text-blue-500 font-bold pt-1">
         My Total Item: {products.length}
       </p>
-      <div className=" pt-10 grid md:grid-cols-3 gap-5 py10 ">
-        {products.map((product) => (
-          <div key={products._id}>
-            <p>name:{product.name}</p>
-            <p>email: {product.email}</p>
-            <p>price: {product.price}</p>
-            <p>quantity: {product.quantity}</p>
-            <p>supplier: {product.supplier}</p>
-            <img src={product.image} alt="" />
-            <button
-              onClick={() => deleteHandeler(product._id)}
-              className=" text-red-600 text-4xl p-2  rounded-xl ml-10"
-            >
-              <MdDeleteForever />
-            </button>
-          </div>
-        ))}
+      <div className="mx-5 mb-10 bg-gray-200 rounded-xl  relative shadow-xl p-10 ">
+        <div className="pt-10 grid md:grid-cols-3 gap-5 py-10">
+          {products.map((product) => (
+            <div key={products._id}>
+              <img className="h-[100px] w-[100px]" src={product.image} alt="" />
+              <p>Name:{product.name}</p>
+              <p>Email: {product.email}</p>
+              <p>Price: {product.price}</p>
+              <p>Quantity: {product.quantity}</p>
+              <p>Supplier: {product.supplier}</p>
+
+              <button
+                onClick={() => deleteHandeler(product._id)}
+                className=" text-red-600 text-4xl p-2  rounded-xl ml-36"
+              >
+                <MdDeleteForever />
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

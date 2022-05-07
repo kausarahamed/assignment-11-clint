@@ -33,6 +33,7 @@ const AddItem = () => {
       .then((data) => {
         if (data.insertedId) {
           event.target.reset();
+          alert("Add Succesfully");
         }
       });
   };
