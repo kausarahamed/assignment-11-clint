@@ -19,7 +19,7 @@ const Update = () => {
         <div className=" md:w-1/2">
           <img src={image} alt="" />
         </div>
-        <div className="md:w-1/2 mt-16 mb-2">
+        <div className="md:w-1/2 mt-16 mb-2 ml-10">
           <h1 className="text-4xl font-serif italic text-center text-blue-500 font-bold pt-1">
             {name}
           </h1>

@@ -6,7 +6,10 @@ const Still = () => {
   return (
     <div>
       <div className="pt-10 grid md:grid-cols-4 gap-5 py10 mb-10">
-        <div>
+        <div className="relative ">
+          <sup className="border-2 p-4 rounded-full bg-red-600 text-white absolute top-[-20px] left-0">
+            $30 Free
+          </sup>
           <img
             src="https://i.ibb.co/JQZS1Gj/cycle2.webp"
             className="h-[350px] "
@@ -23,7 +26,10 @@ const Still = () => {
           </p>
           <p>43 Reviews</p>
         </div>
-        <div>
+        <div className="relative ">
+          <sup className="border-2 p-4 rounded-full bg-red-600 text-white absolute top-[-20px] left-0">
+            $50 Free
+          </sup>
           <img
             src="https://i.ibb.co/ft7hg3M/cycle4.webp"
             className="h-[350px] "
