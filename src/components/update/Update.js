@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Update = () => {
   const navigate = useNavigate();
@@ -12,6 +13,21 @@ const Update = () => {
   }, [id]);
   const { name, email, image, description, supplier, quantity, price } =
     product;
+
+  const handleDelivered = () => {
+    const newQuantity = quantity - 1;
+    fetch(`http://localhost:5000/user/${id}`, {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ newQuantity }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          toast.success("Delivered Successful", { id: "toastId" });
+        }
+      });
+  };
 
   return (
     <div>
@@ -42,7 +58,10 @@ const Update = () => {
         </div>
       </div>
       <div className="flex justify-evenly mb-10">
-        <button className=" border-2 bg-orange-400 p-2   rounded-lg text-white ">
+        <button
+          onClick={handleDelivered}
+          className=" border-2 bg-orange-400 p-2   rounded-lg text-white "
+        >
           Deliver
         </button>
         <form>
