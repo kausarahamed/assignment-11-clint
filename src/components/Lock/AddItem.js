@@ -30,7 +30,11 @@ const AddItem = () => {
       },
     })
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.insertedId) {
+          event.target.reset();
+        }
+      });
   };
 
   const [user] = useAuthState(auth);
