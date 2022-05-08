@@ -15,7 +15,7 @@ const Inventoris = () => {
       </h1>
       <div>
         <div className="pt-10 grid md:grid-cols-3 gap-5 py10 ">
-          {cycles.map((cycle) => (
+          {cycles.slice(0, 6).map((cycle) => (
             <ManageCycle key={cycle._id} product={cycle} />
           ))}
         </div>
