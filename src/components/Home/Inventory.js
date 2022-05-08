@@ -16,7 +16,7 @@ const Inventory = () => {
         Inventory
       </h1>
       <div className="pt-10 grid md:grid-cols-3 gap-5 py10 ">
-        {cycles.map((cycle) => (
+        {cycles.slice(0, 6).map((cycle) => (
           <Product key={cycle._id} product={cycle} />
         ))}
       </div>
