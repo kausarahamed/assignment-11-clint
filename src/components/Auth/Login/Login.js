@@ -36,7 +36,10 @@ const Login = () => {
   const signInEmail = async (e) => {
     e.preventDefault();
     await signInWithEmailAndPassword(email, password);
-    const { data } = await axios.post("http://localhost:5000/login", { email });
+    const { data } = await axios.post(
+      "https://intense-stream-06695.herokuapp.com/login",
+      { email }
+    );
     console.log(data);
     localStorage.setItem("accessToken", data.accessToken);
     navigate(from, { replace: true });
