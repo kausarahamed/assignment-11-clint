@@ -51,7 +51,7 @@ const Login = () => {
   };
 
   if (user || userOne) {
-    // navigate(from, { replace: true });
+    navigate(from, { replace: true });
   }
 
   return (
