@@ -6,16 +6,19 @@ const ManageCycle = ({ product }) => {
   const navigate = useNavigate();
   const { _id, name, price, image, description, quantity, supplier } = product;
   const deleteHandeler = (id) => {
-    fetch(`https://intense-stream-06695.herokuapp.com/user/${id}`, {
-      method: "delete",
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.deletedCount > 0) {
-          navigate("/");
-          alert("Delete success");
-        }
-      });
+    const confirm = window.confirm("Are You Sure");
+    if (confirm) {
+      fetch(`https://intense-stream-06695.herokuapp.com/user/${id}`, {
+        method: "delete",
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            navigate("/");
+            alert("Delete success");
+          }
+        });
+    }
   };
   return (
     <div>
