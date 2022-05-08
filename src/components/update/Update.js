@@ -24,7 +24,7 @@ const Update = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
-          toast.success("Delivered Successful", { id: "toastId" });
+          alert("Delivered Successful");
         }
       });
   };
@@ -42,7 +42,7 @@ const Update = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
-          toast.success("Quantity Added Successfully", { id: "toastId" });
+          alert("Quantity Added Successfully");
           e.target.reset();
         }
       });

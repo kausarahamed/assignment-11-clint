@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ManageCycle from "../Lock/ManageCycle";
 
 const Inventoris = () => {
+  const navigate = useNavigate();
   const [cycles, setCycle] = useState([]);
   useEffect(() => {
     fetch("https://intense-stream-06695.herokuapp.com/users")
@@ -19,6 +21,14 @@ const Inventoris = () => {
             <ManageCycle key={cycle._id} product={cycle} />
           ))}
         </div>
+      </div>
+      <div className="flex justify-center">
+        <button
+          onClick={() => navigate("/additem")}
+          className="border-2 bg-orange-400 py-2 px-5 text-2xl rounded-lg text-white font-bold"
+        >
+          Add Item
+        </button>
       </div>
     </div>
   );
