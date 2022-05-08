@@ -3,6 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
 import { MdDeleteForever } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const MyItem = () => {
   const navigate = useNavigate();
